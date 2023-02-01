@@ -1,0 +1,183 @@
+.urs_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-image: url(/assets/image/Background_Img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100% 100% ;
+}
+
+.top_login_ban {
+  text-align: center;
+  padding-bottom: 34px;
+  color: white;
+}
+.top_login_ban h3 {
+      font-size: 40px;
+      font-weight: bold;
+  }
+
+  .top_login_ban p {
+      padding-top: 10px;
+      font-size: 28px;
+  }
+
+
+
+.login_card_layout {
+  width: 45em;
+  height: 25em;
+  box-shadow: 0 4px 10px rgba(22, 22, 22, 0.14);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.urs_login_heading {
+  padding-top: 100px;
+  height: 100%;
+  border-right: 1px solid #c4c2c2;
+  text-align: center;
+}
+/* .urs_login_heading2 {
+  padding-top: 100px;
+  height: 100%;
+  border-right: 1px solid #c4c2c2;
+  text-align: center;
+} */
+
+.urs_login_heading img {
+  width: 220px;
+  height: auto;
+}
+
+.consumer_urs_login{
+  padding:2em;
+}
+
+.control {
+  margin-bottom: 1.5rem;
+}
+
+.control label {
+      display: block;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: #333;
+  }
+
+  input[type="text"],
+  .control input[type="password"] {
+      width: 100%;
+      border-width: 1px;
+      border-color: #cecece;
+      border-style: solid;
+      box-shadow: none;
+      outline: none;
+      padding: 0.4em 0.4em;
+      box-sizing: border-box;
+      display: block;
+      font-size: 1.4rem;
+  
+
+    }
+    .control:hover {
+          border-color: #b4b4b4;
+      }
+
+      .control:focus,
+      .control:active {
+          border-color: #20407a;
+      }
+
+
+
+.errorText {
+  color: #F44336;
+  font-size: 11px;
+}
+
+
+.login_urs_btn {
+}
+  .login_urs_btn button {
+      width: 100%;
+      padding: 6px;
+      background: #811A1B;
+      color: #fff;
+      border: 1px solid #811A1B;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom:0.5em;
+  }
+
+  .login_urs_btn button:hover {
+      background: #aa2224;
+  }
+
+  .login_urs_btn a{
+      color: #811A1B;
+      float:right;
+  }
+
+
+
+
+/*
+.loginLabel {
+  color: #811a1b;
+  font-size: 26px;
+  margin-top: 4px;
+}
+
+.loginBg {
+
+  background-image: url('/assets/images/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loginOverlay {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.control {
+
+  >input[type='text'],
+  >input[type='password'] {
+    border-color: #808080;
+  }
+}
+
+
+.appTitle {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+*/
+
+.footer {
+  width: 100vw;
+  overflow-x: hidden;
+  text-align: center;
+  bottom:0;
+  position:fixed;
+  font-size: 11px;
+  background-color: lightgray;
+  padding: 5px 0;
+  color: black;
+}
+#password,#uname:placeholder-shown { /* Mozilla Firefox 4 to 18 */
+  font-size: 1em;
+}

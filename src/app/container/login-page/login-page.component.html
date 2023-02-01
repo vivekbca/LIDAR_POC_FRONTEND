@@ -1,0 +1,57 @@
+<div style="display: flex;flex-direction:column;height:100%;" class="urs_container">
+  <div style="flex:1 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;" class="loginOverlay">
+    <div class="top_login_ban" style="margin-top: 40px;">
+      <b><h2 style="font: 2.2rem Serif;color: rgb(255, 255, 255);" >SUBSTATION DIGITIZATION</h2></b>
+      <!-- <b><h3 style="font: 2.2rem Serif;">Case Manager Login</h3></b> -->
+    </div>
+    <div class="login_card_layout" style="margin-top:-30px;">
+      <div style="display:flex">
+        <div style="flex: 1;">
+            <div class="urs_login_heading">
+                <img style="margin-top: -30px;" src="/assets/image/echol_login_logo.png" alt="logo" />
+                <img style="margin-right:10px ;margin-top: 20px;" src="/assets/image/sp_logo.png" alt="logo" />
+            </div>
+            <!-- <div class="urs_login_heading2">
+              <img src="/assets/image/sp_logo.png" alt="logo" />
+          </div> -->
+        </div>
+        <div style="flex: 1;">
+          <form fxFlex fxLayout="column" fxLayoutGap="10px" style="padding:20px;" id="login" [formGroup]="LoginForm" novalidate>
+            <div class="consumer_urs_login">
+              <div class="control">
+                <label>Username</label>
+                <input #username type="text" placeholder="Your Username" type="text" class="form-control" id="uname"
+                formControlName="UserName" [ngClass]="{ 'is-invalid': submitted && f['UserName'].errors }"
+                autocomplete="off"/>
+                <div *ngIf="submitted && f['UserName'].errors" class="invalid-feedback">
+                  <div *ngIf="f['UserName'].errors['required']"><span style="color:red">User Name is required</span></div>
+                </div>
+              </div>
+            
+              <div class="control">
+                <label>Password</label>
+                <input #password placeholder="Your Password" type="password" class="form-control" id="password"
+                formControlName="Password" [ngClass]="{'is-invalid': submitted && f['Password'].errors }"/>
+                <div *ngIf="submitted && f['Password'].errors" class="invalid-feedback">
+                  <div *ngIf="f['Password'].errors['required']"><span style="color:red"> Password is required </span></div>
+                </div>
+              </div>
+
+              <div class="login_urs_btn">
+                <button mat-raised-button type="submit" (click)="OnGetToken()" color="primary">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="footer" fxLayout="column" fxLayoutAlign="start center">
+    eSentinel Traffic - Centralised Variable Messaging Board(VMS) Portal v{{version}} | Copyright © {{year}} Echol Tech Pte Ltd. | All Rights Reserved.
+  </div> -->
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait... </p>  
+    </ngx-spinner>
+</div>
+
+
