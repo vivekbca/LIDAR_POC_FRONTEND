@@ -50,7 +50,6 @@ export class NavsidemenuComponent implements OnInit {
 
   logout()
   {
-
     sessionStorage.clear();
     this.globalservice.swalSuccess("Logged Out Successful !")
     this.router.navigate(['login-page']);
@@ -66,7 +65,11 @@ export class NavsidemenuComponent implements OnInit {
   }
   dashboard()
   {
-    this.router.navigate(['cc-dashboard']);
+    this.router.navigate(['dashboard']);
+  }
+  intrusionDetection()
+  {
+    this.router.navigate(['intrusion-detection']);
   }
 
 

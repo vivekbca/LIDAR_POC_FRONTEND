@@ -3894,34 +3894,4 @@
       width: 150px;
       margin-top: -10px;
     }
-    video {
-      max-width: 100%;
-      height: auto;
-  }
-  .container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-}
-.container iframe{
-  position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height:100%;
-}
-.container object{
-  position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.container iframe{
-  -moz-transform:    rotate(90deg);
-  -o-transform:      rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -ms-transform:     rotate(90deg);
-  transform:         rotate(90deg);
-}
+ 

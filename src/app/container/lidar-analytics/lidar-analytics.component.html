@@ -6,16 +6,65 @@
         </div>
         <div class="col-md-11">
             <br>
-           <h3><span class="case_manager" style="color: #811a1b;">  <b style="font-size: large;"><img src="./assets/image/sp_logo.png" height="60px" /></b></span></h3> 
+            <h3><span class="case_manager" style="color: #811a1b;"> <b style="font-size: large;"><img
+                            src="./assets/image/sp_logo.png" height="60px" /></b></span></h3>
         </div>
     </div>
 
- <br>
+    <br>
     <div class="col-md-12">
-        <div class="v1_13 col-md-12" style="text-align: center;" ><h1><p style="margin-top: -6px;">LIDAR ANALYTICS | Work In Progress</p></h1></div>
+        <div class="v1_13 col-md-12" style="text-align: center;">
+            <h1>
+                <p style="margin-top: -6px;">LIDAR ANALYTICS</p>
+            </h1>
+        </div>
     </div>
 
     <menu style="width: 100%;height: 1px;">
     </menu>
-&nbsp;
+    &nbsp;
+
+
+    <form id="login" [formGroup]="LidarForm" novalidate>
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <label>Select UseCase <span style="color: red;">*</span></label>
+                <select class="form-control" type="text" id="Sname" formControlName="modelid"
+                    [ngClass]="{ 'is-invalid': submitted && f['modelid'].errors }" autocomplete="off">
+                    <option disabled selected value="">--Select--</option>
+                    <!-- <option *ngFor="let item of AllSites" [value]="item.site_id">{{item.site_name}}</option> -->
+                </select>
+                <div *ngIf="submitted && f['modelid'].errors" class="invalid-feedback">
+                    <div *ngIf="f['modelid'].errors['required']"><span style="color:red">Required</span></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Select Camera <span style="color: red;">*</span></label>
+                <select class="form-control" type="text" id="Sname" formControlName="camid"
+                    [ngClass]="{ 'is-invalid': submitted && f['camid'].errors }" autocomplete="off">
+                    <option disabled selected value="">--Select--</option>
+                    <!-- <option *ngFor="let item of AllSites" [value]="item.site_id">{{item.site_name}}</option> -->
+                </select>
+                <div *ngIf="submitted && f['camid'].errors" class="invalid-feedback">
+                    <div *ngIf="f['camid'].errors['required']"><span style="color:red">Required</span></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label> </label>
+                <button class="btn btn-primary"
+                    style="background-color:#811a1b;margin-top: 25px;width:20ch;height: 5ch;"
+                    (click)="RunModel()">Run</button>
+            </div>
+        </div>
+    </form>
+    <div class="col-md-12">
+        <hr>
+    </div>
+    <div class="col-md-12">
+        <div class="wrap">
+            <div class="container">
+                    <iframe src="http://192.168.1.50:51042/"></iframe>
+            </div>
+        </div>
+    </div>
 </div>
