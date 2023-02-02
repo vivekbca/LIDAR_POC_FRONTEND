@@ -24,7 +24,6 @@ import { LidarAnalyticsComponent } from './container/lidar-analytics/lidar-analy
 import { VideoAnalyticsComponent } from './container/video-analytics/video-analytics.component';
 import { NavsidemenuComponent } from './container/navsidemenu/navsidemenu.component';
 import { DashboardComponent } from './container/dashboard/dashboard.component';
-import { IntrusionDetectionComponent } from './container/intrusion-detection/intrusion-detection.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { IntrusionDetectionComponent } from './container/intrusion-detection/int
     VideoAnalyticsComponent,
     NavsidemenuComponent,
     DashboardComponent,
-    IntrusionDetectionComponent,
   ],
   imports: [
     BrowserModule,

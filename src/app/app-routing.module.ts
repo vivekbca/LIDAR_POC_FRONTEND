@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './container/dashboard/dashboard.component';
-import { IntrusionDetectionComponent } from './container/intrusion-detection/intrusion-detection.component';
 import { LidarAnalyticsComponent } from './container/lidar-analytics/lidar-analytics.component';
 import { LoginPageComponent } from './container/login-page/login-page.component';
 import { VideoAnalyticsComponent } from './container/video-analytics/video-analytics.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
     {path:'dashboard',component:DashboardComponent},
     {path:'lidar-analytics',component:LidarAnalyticsComponent},
     {path:'video-analytics',component:VideoAnalyticsComponent},
-    {path:'intrusion-detection',component:IntrusionDetectionComponent},
 
 
     
