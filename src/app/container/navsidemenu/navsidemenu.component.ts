@@ -28,24 +28,23 @@ export class NavsidemenuComponent implements OnInit {
     this.userId = sessionStorage.getItem('USERID')
     this.UserRole = sessionStorage.getItem('UserRole')
 
-    $('.btn').click(function(){
-      $(this).toggleClass("click");
-      $('.sidebar').toggleClass("show");
-    });
-      $('.feat-btn').click(function(){
-        $('nav ul .feat-show').toggleClass("show");
-        $('nav ul .first').toggleClass("rotate");
-      });
-      $('.serv-btn').click(function(){
-        $('nav ul .serv-show').toggleClass("show1");
-        $('nav ul .second').toggleClass("rotate");
-      });
-      $('nav ul li').click(function(){
-        $(this).addClass("active").siblings().removeClass("active");
-      });
+    // $('.btn').click(function(){
+    //   $(this).toggleClass("click");
+    //   $('.sidebar').toggleClass("show");
+    // });
+    //   $('.feat-btn').click(function(){
+    //     $('nav ul .feat-show').toggleClass("show");
+    //     $('nav ul .first').toggleClass("rotate");
+    //   });
+    //   $('.serv-btn').click(function(){
+    //     $('nav ul .serv-show').toggleClass("show1");
+    //     $('nav ul .second').toggleClass("rotate");
+    //   });
+    //   $('nav ul li').click(function(){
+    //     $(this).addClass("active").siblings().removeClass("active");
+    //   });
      
   }
-
 
 
   logout()
@@ -57,10 +56,12 @@ export class NavsidemenuComponent implements OnInit {
 
   lidarAnalytics()
   {
+    window.sessionStorage.setItem('SOURCE_NAME', "lidar_analytics");
     this.router.navigate(['lidar-analytics']);
   }
   videoAnalytics()
   {
+    window.sessionStorage.setItem('SOURCE_NAME', "video_analytics");
     this.router.navigate(['video-analytics']);
   }
   dashboard()
@@ -71,6 +72,7 @@ export class NavsidemenuComponent implements OnInit {
   {
     this.router.navigate(['intrusion-detection']);
   }
+  
 
 
 }

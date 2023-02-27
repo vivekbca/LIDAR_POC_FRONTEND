@@ -17,7 +17,7 @@ export class GlobalService {
   constructor(private http: HttpClient) {}
 
   getApiUrl() {
-      let ApiUrl = 'https://localhost:44375/api/'
+      let ApiUrl = 'http://216.48.180.125:6900/'
     // let ApiUrl = 'https://anpr.echoltech.com/online/api/';
     // let ApiUrl = 'http://192.168.18.18/online/api/';
     // let ApiUrl = 'http://anpr.com:8002/api/';

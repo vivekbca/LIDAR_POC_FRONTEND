@@ -51,56 +51,30 @@ throw new Error('Method not implemented.');
     if (this.LoginForm.valid) {
       const loginModel = this.LoginForm.value as Login;
       this.spinner.show();
-      if(loginModel.UserName=="admin" && loginModel.Password=='admin@1234')
-      {
-        this.spinner.hide();
-        this.globalservice.swalSuccess("Login Success !");
-        this.router.navigate(['dashboard']);
-      }
-      else
-      {
-        this.spinner.hide();
-        this.globalservice.swalError("Invalid Credentials !");
-      }
-      // this.authguardService.UserAuthentication(loginModel).subscribe(resp => {
-      //   this.globalservice.showMessage(resp.msg, resp.result);
-      //   if (resp.result === 'Success') {
-      //     window.sessionStorage.setItem('Username', loginModel.UserName);
-      //     if(resp.data.token==null)
-      //     {
-      //       this.spinner.hide();
-      //       this.globalservice.swalError("You Do Not have Access Token !");
-      //     }
-      //     else{
-      //       this.globalservice.swalSuccess(resp.msg);
-      //       this.spinner.hide();
-      //       const token = resp.data.token as string;
-      //       window.sessionStorage.setItem('token', token);
-      //       window.sessionStorage.setItem('USERID', resp.data.userId);
-      //       window.sessionStorage.setItem('UserRole', resp.data.roleName);
-      //       const UserRole=resp.data.roleName;
-      //       if(UserRole=="cc")
-      //       {
-      //         this.router.navigate(['cc-dashboard']);
-      //       }
-      //       if(UserRole=="sw")
-      //       {
-      //         this.router.navigate(['sw-dashboard']);
-      //       }
-      //       if(UserRole=="lta")
-      //       {
-      //         this.router.navigate(['lta-dashboard']);
-      //       }
-            
-      //     }
-
-          
-      //   }
-      //   else {
-      //     this.globalservice.swalError(resp.msg);
-      //     this.spinner.hide();
-      //   }
-      // });
+      this.authguardService.UserAuthentication(loginModel).subscribe(resp => {
+        console.log(resp)
+        if (resp.msg === 'Success') {
+          window.sessionStorage.setItem('Username', loginModel.UserName);
+          if(resp.data[0].token==null)
+          {
+            this.spinner.hide();
+            this.globalservice.swalError("You Do Not have Access Token !");
+          }
+          else{
+            this.spinner.hide();
+            this.globalservice.swalSuccess("Login Success !");
+            this.router.navigate(['dashboard']);
+            const token = resp.data.token as string;
+            window.sessionStorage.setItem('token', token);
+            window.sessionStorage.setItem('USERID', resp.data.userId);
+            window.sessionStorage.setItem('UserRole', resp.data.roleName);
+          }
+        }
+        else {
+          this.globalservice.swalError(resp.msg);
+          this.spinner.hide();
+        }
+      });
     }
   }
 

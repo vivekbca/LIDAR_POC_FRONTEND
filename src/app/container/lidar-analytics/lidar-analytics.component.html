@@ -15,7 +15,7 @@
     <div class="col-md-12">
         <div class="v1_13 col-md-12" style="text-align: center;">
             <h1>
-                <p style="margin-top: -6px;">LIDAR ANALYTICS</p>
+                <p style="margin-top: -6px;">VIDEO ANALYTICS</p>
             </h1>
         </div>
     </div>
@@ -23,16 +23,13 @@
     <menu style="width: 100%;height: 1px;">
     </menu>
     &nbsp;
-
-
-    <form id="login" [formGroup]="LidarForm" novalidate>
         <div class="col-md-12">
             <div class="col-md-3">
                 <label>Select UseCase <span style="color: red;">*</span></label>
-                <select class="form-control" type="text" id="Sname" formControlName="modelid"
-                    [ngClass]="{ 'is-invalid': submitted && f['modelid'].errors }" autocomplete="off">
+                <select class="form-control" type="text" id="Sname" [(ngModel)]="usecase">
                     <option disabled selected value="">--Select--</option>
-                    <!-- <option *ngFor="let item of AllSites" [value]="item.site_id">{{item.site_name}}</option> -->
+                    <option>Helmet Detection</option>
+                    <option>People Count</option>
                 </select>
                 <div *ngIf="submitted && f['modelid'].errors" class="invalid-feedback">
                     <div *ngIf="f['modelid'].errors['required']"><span style="color:red">Required</span></div>
@@ -40,10 +37,9 @@
             </div>
             <div class="col-md-6">
                 <label>Select Camera <span style="color: red;">*</span></label>
-                <select class="form-control" type="text" id="Sname" formControlName="camid"
-                    [ngClass]="{ 'is-invalid': submitted && f['camid'].errors }" autocomplete="off">
+                <select class="form-control" type="text" id="Sname"  [(ngModel)]="camera">
                     <option disabled selected value="">--Select--</option>
-                    <!-- <option *ngFor="let item of AllSites" [value]="item.site_id">{{item.site_name}}</option> -->
+                    <option>Mobile_Cam : 192.168.1.50:51042</option>
                 </select>
                 <div *ngIf="submitted && f['camid'].errors" class="invalid-feedback">
                     <div *ngIf="f['camid'].errors['required']"><span style="color:red">Required</span></div>
@@ -56,14 +52,20 @@
                     (click)="RunModel()">Run</button>
             </div>
         </div>
-    </form>
     <div class="col-md-12">
         <hr>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12" *ngIf="streamingpanel1">
         <div class="wrap">
-            <div class="container">
-                    <iframe src="http://192.168.1.50:51042/"></iframe>
+            <div class="container canvas">
+                    <iframe style="height:70%" src="http://192.168.1.22:6969/helmet_detection?source=0"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12" *ngIf="streamingpanel2">
+        <div class="wrap">
+            <div class="container canvas">
+                    <iframe style="height:70%" src="http://192.168.1.22:6969/people_count?source=http://192.168.1.50:51042/"></iframe>
             </div>
         </div>
     </div>

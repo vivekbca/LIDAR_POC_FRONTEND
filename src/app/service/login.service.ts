@@ -22,7 +22,7 @@ export class LoginService {
     }
     UserAuthentication(loginModel: Login): Observable<ApiResponse> {
       var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json', 'No-Auth': 'True' });
-      return this.httpclient.post<ApiResponse>(this.ApiUrl + 'Login', loginModel, { headers: reqHeader });
+      return this.httpclient.post<ApiResponse>(this.ApiUrl + 'user/login', loginModel, { headers: reqHeader });
     }
     Logout() {
       window.sessionStorage.removeItem('userToken');
