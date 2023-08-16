@@ -2,10 +2,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ApiService } from 'src/app/service/api.service';
 import { GlobalService } from 'src/app/service/global.service';
+
 
 declare const openNav:any;
 
@@ -19,7 +21,8 @@ export class VideoAnalyticsComponent implements OnInit {
   submitted: boolean = false;
   LidarForm:FormGroup;
 
-  constructor(private apiService: ApiService, private globalservice: GlobalService, private spinner: NgxSpinnerService, private formBuilder: FormBuilder, private router: Router, private http: HttpClient) { }
+  constructor(private sanitizer: DomSanitizer,private apiService: ApiService, private globalservice: GlobalService, private spinner: NgxSpinnerService, private formBuilder: FormBuilder, private router: Router, private http: HttpClient)
+   { this.sanitizer = sanitizer;  }
 
   private buildForm() {
     this.LidarForm = this.formBuilder.group({
@@ -28,6 +31,7 @@ export class VideoAnalyticsComponent implements OnInit {
       userid: ['', [Validators.required]]
     });
   }
+ 
 
   ngOnInit() {
     this.buildForm();
